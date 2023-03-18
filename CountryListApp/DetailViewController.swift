@@ -11,13 +11,14 @@ class DetailViewController: UIViewController {
     
     var imageArray: ImageArray!
     @IBOutlet weak var detailImageView: UIImageView!
+    @IBOutlet weak var detailNameLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         detailImageView.image = UIImage(named: imageArray.imageName)
-       
+        detailNameLabel.text = imageArray.title.uppercased()
         
         navigationItem.largeTitleDisplayMode = .never
         
