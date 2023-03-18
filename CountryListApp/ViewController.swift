@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
-    
+    let cellSpacingHeight: CGFloat = 5
     
     @IBOutlet weak var listTableView: UITableView!
     
@@ -56,9 +56,11 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         listTableView.reloadData()
         
-        listTableView.register(MyTableViewCell.self, forCellReuseIdentifier: "MyCell")
+        //listTableView.register(MyTableViewCell.self, forCellReuseIdentifier: "MySecondCell")
         listTableView.delegate = self
         listTableView.dataSource = self
+        
+        listTableView.separatorStyle = .none
         
     }
     
@@ -68,33 +70,29 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! MyTableViewCell
-       
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! CountryTableViewCell
+        
         let countryName = imageArray[indexPath.row].title
         let flagImage = countriesImage[indexPath.row]
-      
-        cell.imageView?.image = flagImage
-        cell.textLabel?.text = countryName.uppercased()
+
+        cell.countryLabel?.text = countryName.uppercased()
+        cell.countryImage?.image = flagImage
+        
+        cell.countryView.layer.cornerRadius = 30
+        cell.countryImage.layer.cornerRadius = 40
         
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50 // hücre yüksekliği
+        return 100
     }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10 // üstteki boşluğun yüksekliği
-    }
-
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10 // alttaki boşluğun yüksekliği
-    }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let myList = imageArray[indexPath.row]
         performSegue(withIdentifier: "goToDetail", sender: myList)
+        listTableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

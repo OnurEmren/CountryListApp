@@ -19,8 +19,10 @@ class DetailViewController: UIViewController {
         
         detailImageView.image = UIImage(named: imageArray.imageName)
         detailNameLabel.text = imageArray.title.uppercased()
-        
+        detailImageView.layer.borderWidth = 0.5
         navigationItem.largeTitleDisplayMode = .never
+        
+     
         
         
     }
