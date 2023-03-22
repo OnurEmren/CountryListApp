@@ -38,8 +38,8 @@
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="wuA-Fb-FI1"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auf-Gd-G7e">
-                                                            <rect key="frame" x="70" y="10" width="275" height="60"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auf-Gd-G7e">
+                                                            <rect key="frame" x="73" y="8" width="207" height="62"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -93,7 +93,7 @@
                     <navigationItem key="navigationItem" id="NIT-dj-306"/>
                     <connections>
                         <outlet property="listTableView" destination="vJU-md-8ix" id="C7x-rZ-iE0"/>
-                        <segue destination="M3T-N5-sD7" kind="showDetail" identifier="goToDetail" id="ZAD-Ly-5Bu"/>
+                        <segue destination="M3T-N5-sD7" kind="show" identifier="goToDetail" id="ZAD-Ly-5Bu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -105,19 +105,12 @@
             <objects>
                 <viewController storyboardIdentifier="goToDetail" title="Detail" id="M3T-N5-sD7" customClass="DetailViewController" customModule="CountryListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ouj-ep-asI">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="84Z-7q-f7e">
-                                <rect key="frame" x="76" y="177" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="estonia" translatesAutoresizingMaskIntoConstraints="NO" id="84Z-7q-f7e">
+                                <rect key="frame" x="58" y="303" width="276" height="160"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zF-me-88A">
-                                <rect key="frame" x="101" y="358" width="191" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nde-CC-xdh"/>
                         <color key="backgroundColor" red="0.62069617740000005" green="0.82562050249999996" blue="0.88150376080000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -128,9 +121,9 @@
                             <constraint firstItem="84Z-7q-f7e" firstAttribute="leading" secondItem="Nde-CC-xdh" secondAttribute="leading" constant="76" id="yUz-3J-HYg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ziT-eQ-HEp"/>
                     <connections>
                         <outlet property="detailImageView" destination="84Z-7q-f7e" id="BtQ-q9-akI"/>
-                        <outlet property="detailNameLabel" destination="9zF-me-88A" id="Fj3-Sd-KeR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mv2-qe-oh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,6 +150,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="estonia" width="200" height="100"/>
         <image name="uk" width="200" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
